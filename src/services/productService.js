@@ -1,7 +1,12 @@
-import { products } from "../data/products"
 
+// Esta funcion realiza una solicitud HTTP a una API Rest para obtener una lista de productos.
+export const getProducts = async() => {
 
-export const getProducts = () => {
+    // consumir una api rest
+    const response = await fetch('http://localhost:8080/products'); // respuesta
+
+    const products = await response.json();
+
     return products;
 }
 

@@ -1,14 +1,15 @@
-
-
-import React from 'react'
+import { useNavigate } from "react-router-dom";
 
 //contenido del componente padre CatalogView
 
 export const ProductCardView = ({ handler, id, name, description, price}) => {
 
+    const navigate = useNavigate();
+
     const onAddProduct = (product) => { // recibo el objeto si destructurar
         console.log(product);
         handler(product); // se emite al componente padre original(CartApp)
+        navigate('/cart');
     }
     return (
         <>
